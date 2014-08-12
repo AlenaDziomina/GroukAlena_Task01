@@ -33,9 +33,9 @@ public class Task01 {
         
         try {
             sortEquip(magaz, "weight");
-            for (MotoEquipment eq: magaz) {
+            magaz.stream().forEach((eq) -> {
                 System.out.println(eq.toString());
-            }
+            });
         } catch (ProjectException ex) {
             localLog.error("Sorting equip by weight if fail.");
         }
@@ -48,14 +48,12 @@ public class Task01 {
         
         try {
             List<MotoEquipment> sortList = selectByPrice(magaz, 200, 300);
-            for (MotoEquipment eq: sortList) {
+            sortList.stream().forEach((eq) -> {
                 System.out.println(eq.toString());
-            }
+            });
         } catch (ProjectException ex) {
             localLog.error("Sorting equip by price if fail.");
         }
-        
-        
         
     }
     
